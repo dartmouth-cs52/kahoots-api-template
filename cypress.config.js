@@ -2,13 +2,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const { defineConfig } = require('cypress');
 
+const baseUrl = process.env.PORT ? `http://localhost:${process.env.PORT}` : 'http://localhost:9090';
+
+
 module.exports = defineConfig({
-  video: false,
-  screenshotOnRunFailure: false,
   e2e: {
-    baseUrl: 'http://localhost:9090',
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-    },
+    baseUrl,
+    video: false,
+    supportFile: false,
+    screenshotOnRunFailure: false,
   },
 });
