@@ -244,6 +244,11 @@ describe('Players submit answers to 4th question (index 3)', () => {
   });
 
   it('Bob stalls and does not submit', () => {
+    cy.request('GET', `/rooms/${roomId}?player=Bob`).then((response) => {
+      expect(response.status).to.eq(200);
+      expect(response.body.status).to.eq('IN_PROGRESS');
+      expect(response.body.currentQuestionNumber).to.eq(3);
+    });
   });
 });
 

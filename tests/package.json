@@ -1,0 +1,12 @@
+{
+  "name": "short6-kahoots-api-tests",
+  "version": "1.0.0",
+  "description": "Cypress tests for the Short 6 Kahoots API assignment.",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^15.5.0"
+  }
+}
